@@ -4,7 +4,7 @@ class Author < ActiveRecord::Base
   has_many :books, through: :book_authors
   
   # Validations
-  validates_presence_of :first_name, :last_name
+  validates :first_name, :last_name, presence: true
   
   # Scopes
   scope :alphabetical, -> { order('last_name, first_name') }

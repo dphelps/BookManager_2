@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20140212162224) do
 
-  create_table "authors", force: true do |t|
+  create_table "authors", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "active",     default: true
@@ -21,14 +20,14 @@ ActiveRecord::Schema.define(version: 20140212162224) do
     t.datetime "updated_at"
   end
 
-  create_table "book_authors", force: true do |t|
+  create_table "book_authors", force: :cascade do |t|
     t.integer  "book_id"
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "books", force: true do |t|
+  create_table "books", force: :cascade do |t|
     t.string   "title"
     t.integer  "category_id"
     t.integer  "units_sold",     default: 0
@@ -40,14 +39,14 @@ ActiveRecord::Schema.define(version: 20140212162224) do
     t.datetime "updated_at"
   end
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.boolean  "active",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
     t.string   "password_hash"
