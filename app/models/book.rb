@@ -13,10 +13,6 @@ class Book < ActiveRecord::Base
   # see https://github.com/adzap/validates_timeliness for documentation
 
 
-
-
-
-
     
   # Custom validation
   validate :category_is_active_in_system
